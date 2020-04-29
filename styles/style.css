@@ -42,10 +42,10 @@ body {
     margin-top: 8px;
 } 
 
-.menu li {
+.menu > li {
     float: left;
-    width: 25%;
-    border-left: 1px solid #2c71b8;
+    width: 25%;    
+    position: relative;
 }
 
 .menu li:last-child {
@@ -61,14 +61,51 @@ body {
     color: #2c71b8;
     font-size: 21px;
     font-weight: 300;
+    border-left: 1px solid #2c71b8;
 }
 
+.submenu {
+    visibility: hidden;
+    opacity: 0;
+    margin: 0px;
+    padding-left: 0px;
+    position: absolute;
+    text-align: left;
+    padding: 25px 0;
+    background-color: #2c71b8;
+    width: 201%;
+    cursor: pointer;
+}
+
+.submenu li a{
+    text-align: left;
+    color: white;
+    height: 40px;
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 40px;
+    padding-left: 31px;    
+}
+
+.menu li:hover > ul {
+    visibility: visible;
+    opacity: 1; 
+}
 .menu a:hover {
     background-color: #2c71b8;
     color: white;
 }
 
-.menu a, .menu a:hover {
+.submenu li a:hover {
+    background-color: white;
+    color: #2c71b8;
+}
+
+.menu a, 
+.menu a:hover,
+.menu li:hover > ul,
+.submenu,
+.submenu li a:hover  {
     transition: 0.3s;
 }
 
@@ -137,3 +174,4 @@ body {
     font-size: 12px;
     font-weight: 400;
 }
+
