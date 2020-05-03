@@ -84,7 +84,8 @@ body {
     font-size: 21px;
     font-weight: 300;
     line-height: 40px;
-    padding-left: 31px;    
+    padding-left: 31px;
+    border: none;    
 }
 
 .menu li:hover > ul {
