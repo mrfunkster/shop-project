@@ -212,3 +212,20 @@ body {
     font-weight: 400;
 }
 
+main {
+    padding: 100px 0;
+    text-align: center;
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.75);
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+footer {
+    padding: 100px 0;
+    text-align: center;
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.75);
+    text-transform: uppercase;
+    font-size: 25px;
+}
