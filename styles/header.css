@@ -72,10 +72,6 @@
     right: 10%;
 }
 
-.menu > li:nth-child(2) > a:hover:after {
-    border-color: white;
-}
-
 .submenu {
     visibility: hidden;
     opacity: 0;
@@ -104,7 +100,7 @@
     visibility: visible;
     opacity: 1; 
 }
-.menu a:hover, .menu > li:hover a {
+.menu > li:hover a {
     background-color: #2c71b8;
     color: white;
 }
@@ -120,7 +116,7 @@
 .menu a, 
 .menu a:hover,
 .menu > li:nth-child(2) > a:after,
-.menu > li:nth-child(2) > a:hover:after,
+.menu > li:hover a:after, 
 .menu li:hover > ul,
 .submenu,
 .submenu li a:hover  {
