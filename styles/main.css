@@ -1,0 +1,8 @@
+main {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.75);
+    text-transform: uppercase;
+    font-size: 25px;
+    height: 80vh;
+    line-height: 80vh;
+}
