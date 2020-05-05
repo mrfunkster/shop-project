@@ -113,10 +113,13 @@ body {
     visibility: visible;
     opacity: 1; 
 }
-.menu a:hover {
+.menu a:hover, .menu > li:hover a {
     background-color: #2c71b8;
     color: white;
 }
+.menu > li:hover a:after {
+    border-color: white;
+} 
 
 .submenu li a:hover {
     background-color: white;
