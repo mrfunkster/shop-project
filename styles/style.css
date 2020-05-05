@@ -64,6 +64,27 @@ body {
     border-left: 1px solid #2c71b8;
 }
 
+.menu > li:nth-child(2) > a {
+    position: relative;
+}
+
+.menu > li:nth-child(2) > a:after {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-right: 1.5px solid #2c71b8;
+    border-bottom: 1.5px solid #2c71b8;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 21px;
+    right: 10%;
+}
+
+.menu > li:nth-child(2) > a:hover:after {
+    border-color: white;
+}
+
 .submenu {
     visibility: hidden;
     opacity: 0;
@@ -104,6 +125,8 @@ body {
 
 .menu a, 
 .menu a:hover,
+.menu > li:nth-child(2) > a:after,
+.menu > li:nth-child(2) > a:hover:after,
 .menu li:hover > ul,
 .submenu,
 .submenu li a:hover  {
