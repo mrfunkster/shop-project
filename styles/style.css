@@ -128,8 +128,10 @@ body {
     background-color: #2c71b8;
     float: right;
     margin: 4px;
-    text-align: center;
-    line-height: 30px;
+    background-image: url(../images/search.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
 }
 
 .search-bar input[type="text"] {
@@ -156,9 +158,10 @@ body {
     float: right;
     background-color: white;
     text-align: center;
-}
-.bin img {
-    margin-top: 10px;
+    background-image: url(../images/bin_blue.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
 }
 
 .bin::before {
