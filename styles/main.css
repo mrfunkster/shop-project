@@ -89,6 +89,7 @@
     height: 40px;
     border: 1px solid white;
     position: relative;
+    cursor: pointer;
 }
 
 .sort p {
@@ -110,6 +111,17 @@
     top: 10px;
     right: 13px;
     transform: rotate(-45deg);
+    transition: 0.3;
+}
+
+.sort:hover p{
+    background-color: rgba(255, 255, 255, 0.75);
+    color: #2c71b8;
+    transition: 0.3s;
+}
+.sort:hover:after {
+    border-color: #2c71b8;
+    transition: 0.3s;
 }
 
 .col-33 {
