@@ -28,6 +28,7 @@
     top: 50%;
     left: 0;
     transform: rotate(-45deg);
+    cursor: pointer;
 }
 
 .slider .container::after {
@@ -42,6 +43,7 @@
     top: 50%;
     right: 0;
     transform: rotate(45deg);
+    cursor: pointer;
 }
 
 .device-filter {
