@@ -1,8 +1,45 @@
-main {
+.slider {
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.2);    
+    border-bottom: 1px solid #ffffff;
+}
+
+.slider .container {
+    position: relative;
+}
+.slider {
     text-align: center;
-    color: rgba(255, 255, 255, 0.75);
-    text-transform: uppercase;
-    font-size: 25px;
-    height: 80vh;
-    line-height: 80vh;
+    line-height: 400px;
+    color: #ffffff;
+    font-size: 100px;
+    font-weight: 100;
+    letter-spacing: 10px;
+}
+
+.slider .container::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-left: 2px solid white;
+    border-top: 2px solid white;
+    position: absolute;
+    transform-origin: left top;
+    top: 50%;
+    left: 0;
+    transform: rotate(-45deg);
+}
+
+.slider .container::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-right: 2px solid white;
+    border-top: 2px solid white;
+    position: absolute;
+    transform-origin: right top;
+    top: 50%;
+    right: 0;
+    transform: rotate(45deg);
 }

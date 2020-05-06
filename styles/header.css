@@ -22,11 +22,11 @@
 }
 
 .col-md-3 {
-    width: 25.6%;
+    width: 25%;
 }
 
 .col-md-6 {
-    width: 48.8%;
+    width: 50%;
 }
 
 .logo {
@@ -81,8 +81,9 @@
     text-align: left;
     padding: 25px 0;
     background-color: #2c71b8;
-    width: 201%;
+    width: calc(200% + 1px);
     cursor: pointer;
+    z-index: 10;
 }
 
 .submenu li a{
