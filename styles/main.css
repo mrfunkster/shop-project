@@ -132,6 +132,13 @@
     width: 66.66%;
 }
 
+.col-22 {
+    width: 22%;
+}
+.col-78 {
+    width: 78%;
+}
+
 .product-card {
     width: 100%;
     border: 1px solid white;
