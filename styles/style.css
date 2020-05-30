@@ -5,4 +5,5 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-image: url(../images/patt.png);
+    min-width: 1170px;
 }
