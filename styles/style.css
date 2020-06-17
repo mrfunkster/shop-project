@@ -37,7 +37,8 @@ body {
     height: 100px;
     width: 100%;
     line-height: 20px;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: 200;
     display: flex;
     align-items: center;
 }
@@ -54,7 +55,7 @@ body {
     font-size: 20px;
     cursor: pointer;
     transition: .3s;
-    border: 2px solid white;
+    border: 2px solid #2c71b8;
     
 }
 
@@ -66,8 +67,4 @@ body {
 .popup-window-active {
     visibility: visible;
     opacity: 1;
-}
-
-.overflow {
-    overflow: hidden !important;
 }
