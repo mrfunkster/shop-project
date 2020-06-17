@@ -3,6 +3,7 @@ let productCount = document.querySelector('.product-count');
 let popupWindow = document.querySelector('.popup-window');
 let popupCloseButton = document.querySelector('.popup-button');
 let popupProductCount = document.querySelector('.popup-message p')
+let productCountBin = document.querySelector('.bin-anotation');
 console.log(popupProductCount);
 
 for (let addToCartButton of addToCartButtons) {
@@ -11,8 +12,6 @@ for (let addToCartButton of addToCartButtons) {
         console.log(productTittle)
         let binProductCount = +productCount.innerHTML;
         binProductCount++;
-        productCount.innerHTML = binProductCount;
-        popupWindow.classList.add('popup-window-active');
         let word;
         if(binProductCount === 1) {
             word = "товар";
@@ -21,6 +20,9 @@ for (let addToCartButton of addToCartButtons) {
         } else if(binProductCount >= 5) {
             word = "товарів"
         }
+        productCount.innerHTML = binProductCount;
+        productCountBin.innerHTML = `Зараз у Вашій корзині ${binProductCount} ${word}.`;
+        popupWindow.classList.add('popup-window-active');
         popupProductCount.innerHTML = `Товар "${productTittle}" успішно додано в корзину. Всього в корзині ${binProductCount} ${word}.`;
         popupCloseButton.addEventListener('click', function() {
             popupWindow.classList.remove('popup-window-active');

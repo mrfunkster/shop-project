@@ -185,6 +185,13 @@
     cursor: pointer;
 }
 
+.bin:hover > .bin-anotation {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
 .product-count {
     width: 20px;
     height: 20px;
@@ -197,4 +204,24 @@
     line-height: 20px;
     font-size: 12px;
     font-weight: 400;
+    visibility: visible;
+    opacity: 1;
+    transition: .3s;
+}
+
+.bin-anotation {
+    position: absolute;
+    background-color: white;
+    top: 100%;
+    right: 0;
+    width: 293px;
+    padding: 40px 40px;
+    font-size: 20px;
+    color: #2c71b8;
+    cursor: pointer;
+    line-height: 25px;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+    z-index: 2;
 }
