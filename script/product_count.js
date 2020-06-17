@@ -2,14 +2,12 @@ const addToCartButtons = document.querySelectorAll('.button2');
 let productCount = document.querySelector('.product-count');
 let popupWindow = document.querySelector('.popup-window');
 let popupCloseButton = document.querySelector('.popup-button');
-let popupProductCount = document.querySelector('.popup-message p')
+let popupProductCount = document.querySelector('.popup-message p');
 let productCountBin = document.querySelector('.bin-anotation');
-console.log(popupProductCount);
 
 for (let addToCartButton of addToCartButtons) {
     addToCartButton.addEventListener('click', function() {
         let productTittle = addToCartButton.parentElement.parentElement.querySelector('.product-title p').innerHTML;
-        console.log(productTittle)
         let binProductCount = +productCount.innerHTML;
         binProductCount++;
         let word;
