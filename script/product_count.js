@@ -23,7 +23,7 @@ for (let addToCartButton of addToCartButtons) {
             let binProductCount = 0;
             productCount.innerHTML = binProductCount;
             cleanRecycleBtn.style.display = 'none';
-            productCountBin.innerHTML = `У Вашій корзині ще відсутні товари.`;
+            productCountBin.innerHTML = `У Вашій корзині відсутні товари.`;
             cleanBinMessage.classList.remove('visible');
             let timer = setTimeout(function() {
                 binAnotation.classList.remove('visible');
