@@ -21,6 +21,7 @@ for (let addToCartButton of addToCartButtons) {
         cleanRecycleBtn.classList.add('white-hover')
         cleanBinMessage.classList.add('visible');
         binAnotation.classList.add('visible');
+        binIcon.classList.add('border');
         cleanPopupAgree.addEventListener('click', function() {
             let binProductCount = 0;
             resultPrice         = 0;
@@ -31,6 +32,7 @@ for (let addToCartButton of addToCartButtons) {
             let timer = setTimeout(function() {
                 binAnotation.classList.remove('visible');
                 cleanRecycleBtn.classList.remove('white-hover');
+                binIcon.classList.remove('border');
             }, 2000);
         });
         cleanPopupCancel.addEventListener('click', function() {
@@ -38,6 +40,7 @@ for (let addToCartButton of addToCartButtons) {
             let timer = setTimeout(function() {
                 binAnotation.classList.remove('visible');
                 cleanRecycleBtn.classList.remove('white-hover');
+                binIcon.classList.remove('border');
             }, 2000);
         });
     });
@@ -64,7 +67,7 @@ for (let addToCartButton of addToCartButtons) {
         productCount.innerHTML = binProductCount;
         productCountBin.innerHTML = `Зараз у Вашій корзині ${binProductCount} ${word} на суму <span>${resultPrice.toFixed(2)}$</span>`;
         popupWindow.classList.add('visible');
-        popupProductCount.innerHTML = `Товар "${productTittle}" успішно додано в корзину. Всього в корзині ${binProductCount} ${word}.`;
+        popupProductCount.innerHTML = `Товар "${productTittle}" успішно додано в корзину. Всього в корзині ${binProductCount} ${word} на суму ${resultPrice.toFixed(2)}$`;
         popupCloseButton.addEventListener('click', function() {
             popupWindow.classList.remove('visible');
         });
@@ -76,9 +79,9 @@ window.addEventListener('scroll', function() {
     scrollPos = window.scrollY;
     if (scrollPos > 400) {
         headerBar.style.backgroundColor = 'rgba(255, 255, 255, .98)';
-        binIcon.style.borderColor = '#2c71b8';
+        binIcon.classList.add('border');
     } else if (scrollPos <= 400) {
         headerBar.style.backgroundColor = 'rgba(255, 255, 255, .75)';
-        binIcon.style.borderColor = 'white';
+        binIcon.classList.remove('border');
     }    
 });
