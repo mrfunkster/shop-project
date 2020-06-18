@@ -164,8 +164,9 @@
 .search-bar input[type="text"] {
     border: none;
     width: 80%;
+    height: 30px;
+    margin: auto;
     padding-left: 20px;
-    margin-top: 5px;
     color: #2c71b8;
     font-size: 21px;
     font-weight: 300;
