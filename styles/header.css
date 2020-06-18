@@ -241,6 +241,9 @@
 .bin-anotation p {
     padding-bottom: 20px;
 }
+.bin-anotation p span {
+    font-weight: 400;
+}
 .bin-anotation .popup-button {
     width: 100%;
     font-size: 16px;

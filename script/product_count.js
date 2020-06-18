@@ -11,7 +11,9 @@ let cleanRecycleBtn    = document.querySelector('.bin-anotation .popup-button');
 let cleanPopupAgree    = document.getElementById('bin-clear-agree');
 let cleanPopupCancel   = document.getElementById('bin-clear-cancel');
 let cleanBinMessage    = document.getElementById('bin-message');
+let binResultPrice     = document.querySelector('.bin-anotation p span');
 let scrollPos          = 0;
+let resultPrice        = 0;
 
 
 for (let addToCartButton of addToCartButtons) {
@@ -21,9 +23,10 @@ for (let addToCartButton of addToCartButtons) {
         binAnotation.classList.add('visible');
         cleanPopupAgree.addEventListener('click', function() {
             let binProductCount = 0;
+            resultPrice         = 0;
             productCount.innerHTML = binProductCount;
             cleanRecycleBtn.style.display = 'none';
-            productCountBin.innerHTML = `У Вашій корзині відсутні товари.`;
+            productCountBin.innerHTML = `У Вашій корзині відсутні товари<span></span>.`;
             cleanBinMessage.classList.remove('visible');
             let timer = setTimeout(function() {
                 binAnotation.classList.remove('visible');
@@ -39,9 +42,13 @@ for (let addToCartButton of addToCartButtons) {
         });
     });
     addToCartButton.addEventListener('click', function() {
-        let productTittle = addToCartButton.parentElement.parentElement.querySelector('.product-title p').innerHTML;
-        let binProductCount = +productCount.innerHTML;
+        let productTittle        = addToCartButton.parentElement.parentElement.querySelector('.product-title p').innerHTML;
+        let productPriceValue    = addToCartButton.parentElement.parentElement.querySelector('.product-price p').innerHTML.substr(1).replace("</>", "").replace("<span>", ".");
+        binResultPrice.innerHTML = productPriceValue;
+        let binProductCount      = +productCount.innerHTML;
         binProductCount++;
+        resultPrice              += parseFloat(binResultPrice.innerHTML);
+        console.log(resultPrice);
         cleanRecycleBtn.style.display = 'block';
         let word;
         if(binProductCount === 1) {
@@ -55,7 +62,7 @@ for (let addToCartButton of addToCartButtons) {
             binProductCount = 0;
         })
         productCount.innerHTML = binProductCount;
-        productCountBin.innerHTML = `Зараз у Вашій корзині ${binProductCount} ${word}.`;
+        productCountBin.innerHTML = `Зараз у Вашій корзині ${binProductCount} ${word} на суму <span>${resultPrice.toFixed(2)}$</span>`;
         popupWindow.classList.add('visible');
         popupProductCount.innerHTML = `Товар "${productTittle}" успішно додано в корзину. Всього в корзині ${binProductCount} ${word}.`;
         popupCloseButton.addEventListener('click', function() {
