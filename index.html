@@ -15,10 +15,19 @@
 </head>
 
 <body>
-    <div class="popup-window">
+    <div id="add-message" class="popup-window">
         <div class="popup-message">
             <p>Ви успішно додали до корзини 1 товар</p>
             <div class="popup-button">Ok</div>
+        </div>
+    </div>
+    <div id="bin-message" class="popup-window">
+        <div class="popup-message">
+            <p>Ви впевнені, що бажаєте очистити корзину?</p>
+            <div class="bin-message-buttons">
+            	<div id="bin-clear-agree" class="popup-button">Так</div>
+            	<div id="bin-clear-cancel" class="popup-button">Відміна</div>
+            </div>
         </div>
     </div>
     <header class="header">
@@ -62,7 +71,8 @@
                         <div class="bin">
                             <div class="product-count">0</div>
                             <div class="bin-anotation">
-                                <p>У Вашій корзині ще відсутні товари</p>
+                                <p>У Вашій корзині ще відсутні товари.</p>
+                                <div class="popup-button">Очистити корзину</div>
                             </div>
                         </div>
                     </div>

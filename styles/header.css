@@ -1,9 +1,10 @@
 .header {
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(255, 255, 255, 0.75);
     padding: 25px 0;
     position: sticky;
     top: 0;
     z-index: 50;
+    transition: .5s;
 }
 
 .container {
@@ -144,6 +145,8 @@
     margin-left: 30px;
     padding: 0;
     line-height: 40px;
+    position: relative;
+    z-index: 5;
 }
 
 .search-icon {
@@ -186,14 +189,19 @@
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
+    border: 1px solid white;
+    transition: .5s;
+    z-index: 3;
 }
 
 .bin:hover > .bin-anotation {
     visibility: visible;
     opacity: 1;
+    border-color: #2c71b8;
 }
-
-
+.bin:hover {
+    border-color: #2c71b8 !important;
+}
 
 .product-count {
     width: 20px;
@@ -216,9 +224,9 @@
     position: absolute;
     background-color: white;
     top: 100%;
-    right: 0;
-    width: 293px;
-    padding: 40px 40px;
+    right: -1px;
+    width: 294px;
+    padding: 40px 40px 20px 40px;
     font-size: 20px;
     font-weight: 300;
     color: #2c71b8;
@@ -226,6 +234,26 @@
     line-height: 25px;
     visibility: hidden;
     opacity: 0;
-    transition: .3s;
+    transition: .5s;
     z-index: 2;
+    border: 1px solid #2c71b8;
+}
+.bin-anotation p {
+    padding-bottom: 20px;
+}
+.bin-anotation .popup-button {
+    width: 100%;
+    font-size: 16px;
+    display: none;
+}
+
+.bin-anotation:after {
+    content: '';
+    width: 38px;
+    height: 10px;
+    background-color: white;
+    position: absolute;
+    z-index: 3;
+    top: -5px;
+    right: 0;
 }

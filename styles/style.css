@@ -55,7 +55,7 @@ body {
     font-size: 20px;
     cursor: pointer;
     transition: .3s;
-    border: 2px solid #2c71b8;
+    border: 1px solid #2c71b8;
     
 }
 
@@ -64,7 +64,22 @@ body {
     color: #2c71b8;
     border-color: #2c71b8;
 }
-.popup-window-active {
-    visibility: visible;
-    opacity: 1;
+.visible {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.bin-message-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.bin-message-buttons .popup-button {
+    width: 49%;
+}
+
+.white-hover {
+    background-color: white !important;
+    color: #2c71b8 !important;
+    border-color: #2c71b8 !important;
 }
