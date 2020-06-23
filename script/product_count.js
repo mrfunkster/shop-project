@@ -12,6 +12,7 @@ let cleanPopupAgree    = document.getElementById('bin-clear-agree');
 let cleanPopupCancel   = document.getElementById('bin-clear-cancel');
 let cleanBinMessage    = document.getElementById('bin-message');
 let binResultPrice     = document.querySelector('.bin-anotation p span');
+let favorites          = document.querySelectorAll('.product-logo__favorite');
 let scrollPos          = 0;
 let resultPrice        = 0;
 
@@ -74,6 +75,15 @@ for (let addToCartButton of addToCartButtons) {
     });
 };
 
+for (let favorite of favorites) {
+    favorite.addEventListener('click', function() {
+        if(this.classList.contains('favorite-pressed') === true) {
+            this.classList.remove('favorite-pressed');
+        } else {
+            this.classList.add('favorite-pressed');
+        }
+    })
+}
 
 window.addEventListener('scroll', function() {
     scrollPos = window.scrollY;

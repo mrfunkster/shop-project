@@ -272,6 +272,10 @@
     background-image: url(../images/favorite_white.png);
     transition: 0.3s;
 }
+.favorite-pressed {
+    background-color: #2c71b8;
+    background-image: url(../images/favorite_white.png);
+}
 
 .product-title {
     font-size: 30px;
