@@ -70,11 +70,13 @@ for (let addToCartButton of addToCartButtons) {
         popupWindow.classList.add('visible');
         popupProductCount.innerHTML = `Товар "${productTittle}" успішно додано в корзину. Всього в корзині ${binProductCount} ${word} на суму ${resultPrice.toFixed(2)}$`;
         popupCloseButton.addEventListener('click', function() {
-            popupWindow.classList.remove('visible');
+            closeModal();
         });
     });
 };
-
+function closeModal() {
+    popupWindow.classList.remove('visible');
+}
 for (let favorite of favorites) {
     favorite.addEventListener('click', function() {
         if(this.classList.contains('favorite-pressed') === true) {
@@ -94,4 +96,25 @@ window.addEventListener('scroll', function() {
         headerBar.style.backgroundColor = 'rgba(255, 255, 255, .75)';
         binIcon.classList.remove('border');
     }    
+});
+
+popupWindow.addEventListener('click', function(e) {
+    if(e.target === popupWindow) {
+        closeModal()
+    }
+})
+
+// Slider
+$(document).ready(function() {
+    $(".slider-block").slick({
+        dots: true,
+        autoplay: true,
+        infinite: true,
+        speed: 1000,
+        autoplaySpeed: 5000,
+        pauseOnFocus: false,
+        pauseOnHover: false,
+        pauseOnDotsHover: false,
+        waitForAnimate: false
+    });
 });
