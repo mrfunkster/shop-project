@@ -114,6 +114,7 @@ $(document).ready(function() {
         autoplaySpeed: 5000,
         pauseOnFocus: false,
         pauseOnHover: false,
-        pauseOnDotsHover: false
+        pauseOnDotsHover: false,
+        waitForAnimate: true
     });
 });
