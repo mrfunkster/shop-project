@@ -74,6 +74,7 @@ for (let addToCartButton of addToCartButtons) {
         });
     });
 };
+
 function closeModal() {
     popupWindow.classList.remove('visible');
 }
@@ -118,3 +119,35 @@ $(document).ready(function() {
         waitForAnimate: true
     });
 });
+
+// Input Count
+
+let countFields = document.querySelectorAll('.input-count-field');
+
+for (let countField of countFields) {
+    let plusBtn = countField.parentElement.querySelector('.increase-count-btn');
+    let minusBtn = countField.parentElement.querySelector('.decrease-count-btn');
+    plusBtn.addEventListener('click', function() {
+        countField.value++;
+        countField.value = getProductCount(countField);
+    });
+    minusBtn.addEventListener('click', function() {
+        countField.value--;
+        countField.value = getProductCount(countField);
+    });
+    countField.addEventListener('keyup', function() {
+        countField.value = getProductCount(countField);
+    })
+}
+
+function getProductCount(countField) {
+    let countValue = +countField.value;
+    if (countValue < 1) {
+        countValue = 1;
+        countField.value = 1;
+    } else if (countValue > 99) {
+        countValue = 99;
+        countField.value = 99;
+    }
+    return countValue;
+}
