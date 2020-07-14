@@ -177,3 +177,12 @@ function incrementButtonToggle(currentCount, i) {
         incrementBtn[i].disabled = false;
     }
 };
+
+
+// SELECTIZE
+
+
+$('#select-sort').selectize({
+    create: true,
+    hideSelected: true
+});

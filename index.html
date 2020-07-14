@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop Project Homework</title>
     <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/selectize.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/main.css">
@@ -172,10 +173,16 @@
                                 <div class="col-66">
                                     <h2>Laptops and Tablets</h2>
                                 </div>
-                                <div class="col-33">
-                                    <div class="sort">
+                                <div class="col-33 select-input">
+                                    <!-- <div class="sort">
                                         <p>sort by price</p>
-                                    </div>
+                                    </div> -->
+                                    <select id="select-sort">
+                                        <option value="1">sort by price</option>
+                                        <option value="2">sort by name</option>
+                                        <option value="3">sort by date</option>
+                                        <option value="4">sort by popularity</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -534,6 +541,7 @@
         </div>
     </div>
     <script src="script/jquery-3.5.1.min.js"></script>
+    <script src="script/selectize.js"></script>
     <script src="script/slick.min.js"></script>
     <script src="script/modal.js"></script>
     <!-- <script src="script/app.js"></script> -->
