@@ -122,32 +122,78 @@ $(document).ready(function() {
 
 // Input Count
 
-let countFields = document.querySelectorAll('.input-count-field');
+// let countFields = document.querySelectorAll('.input-count-field');
 
-for (let countField of countFields) {
-    let plusBtn = countField.parentElement.querySelector('.increase-count-btn');
-    let minusBtn = countField.parentElement.querySelector('.decrease-count-btn');
-    plusBtn.addEventListener('click', function() {
-        countField.value++;
-        countField.value = getProductCount(countField);
-    });
-    minusBtn.addEventListener('click', function() {
-        countField.value--;
-        countField.value = getProductCount(countField);
-    });
-    countField.addEventListener('keyup', function() {
-        countField.value = getProductCount(countField);
-    })
+// for (let countField of countFields) {
+//     let plusBtn = countField.parentElement.querySelector('.increase-count-btn');
+//     let minusBtn = countField.parentElement.querySelector('.decrease-count-btn');
+//     plusBtn.addEventListener('click', function() {
+//         countField.value++;
+//         countField.value = getProductCount(countField);
+//     });
+//     minusBtn.addEventListener('click', function() {
+//         countField.value--;
+//         countField.value = getProductCount(countField);
+//     });
+//     countField.addEventListener('keyup', function() {
+//         countField.value = getProductCount(countField);
+//     })
+// }
+
+// function getProductCount(countField) {
+//     let countValue = +countField.value;
+//     if (countValue < 1) {
+//         countValue = 1;
+//         countField.value = 1;
+//     } else if (countValue > 99) {
+//         countValue = 99;
+//         countField.value = 99;
+//     }
+//     return countValue;
+// }
+
+// prod quantity
+
+let decrementBtn    = document.querySelectorAll('.decrease-count-btn')[0];
+let incrementBtn    = document.querySelectorAll('.increase-count-btn')[0];
+let productQuantity = document.querySelectorAll('.input-count-field')[0];
+
+let currentCount = + productQuantity.value;
+
+function toggleButtonState(currentCount) {
+    decrementButtonToggle(currentCount);
+    incrementButtonToggle(currentCount);
 }
 
-function getProductCount(countField) {
-    let countValue = +countField.value;
-    if (countValue < 1) {
-        countValue = 1;
-        countField.value = 1;
-    } else if (countValue > 99) {
-        countValue = 99;
-        countField.value = 99;
+function decrementButtonToggle(currentCount) {
+    if (currentCount <= 1) {
+        decrementBtn.disabled = true;
+    } else {
+        decrementBtn.disabled = false;
     }
-    return countValue;
 }
+function incrementButtonToggle(currentCount) {
+    if (currentCount >= 5) {
+        incrementBtn.disabled = true;
+    } else {
+        incrementBtn.disabled = false;
+    }
+}
+
+toggleButtonState(currentCount);
+
+incrementBtn.addEventListener('click', function() {
+    let currentCount = +productQuantity.value;
+    let nextCount = currentCount + 1;
+    productQuantity.value = nextCount;
+
+    toggleButtonState(nextCount);
+});
+
+decrementBtn.addEventListener('click', function() {
+    let currentCount = +productQuantity.value;
+    let nextCount = currentCount - 1;
+    productQuantity.value = nextCount;
+
+    toggleButtonState(nextCount);
+});
