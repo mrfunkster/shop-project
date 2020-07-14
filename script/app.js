@@ -18,30 +18,6 @@ for (let likeBtn of likeBtns) {
     })
 }
 
-// Modal
-
-let moreDetailsBtns = document.querySelectorAll('.button1');
-let modal = document.querySelector('.modal');
-let closeBtn = document.querySelector('.btn-close');
-
-moreDetailsBtns.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-        modal.classList.add('show');
-        modal.classList.remove('hide')
-    })
-})
-
-function closeModal() {
-    modal.classList.add('hide');
-    modal.classList.remove('show');
-}
-
-closeBtn.addEventListener('click', closeModal);
-modal.addEventListener('click', function(e) {
-    if(e.target === modal) {
-        closeModal()
-    }
-})
 
 // Slider
 $(document).ready(function() {
