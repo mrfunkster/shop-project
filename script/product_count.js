@@ -142,7 +142,7 @@ for (let i = 0; i < productQuantity.length; i++) {
     let currentCount = + productQuantity[i].value;
     toggleButtonState(currentCount, i);
 
-    incrementBtn[i].addEventListener('click', function(e) {
+    incrementBtn[i].addEventListener('click', function() {
         let currentCount = +productQuantity[i].value;
         let nextCount = currentCount + 1;
         productQuantity[i].value = nextCount;
@@ -150,7 +150,7 @@ for (let i = 0; i < productQuantity.length; i++) {
         toggleButtonState(nextCount, i);
     })
 
-    decrementBtn[i].addEventListener('click', function(e) {
+    decrementBtn[i].addEventListener('click', function() {
         let currentCount = +productQuantity[i].value;
         let nextCount = currentCount - 1;
         productQuantity[i].value = nextCount;
