@@ -130,59 +130,60 @@ $(document).ready(function() {
     });
 });
 
-// Input Count
-
-let decrementBtn    = document.querySelectorAll('.decrease-count-btn');
-let incrementBtn    = document.querySelectorAll('.increase-count-btn');
-let productQuantity = document.querySelectorAll('.input-count-field');
-const maxQuantity   = 5;
-const minQuantity   = 1;
-
-for (let i = 0; i < productQuantity.length; i++) {
-    let currentCount = + productQuantity[i].value;
-    toggleButtonState(currentCount, i);
-
-    incrementBtn[i].addEventListener('click', function() {
-        let currentCount = +productQuantity[i].value;
-        let nextCount = currentCount + 1;
-        productQuantity[i].value = nextCount;
-        
-        toggleButtonState(nextCount, i);
-    })
-
-    decrementBtn[i].addEventListener('click', function() {
-        let currentCount = +productQuantity[i].value;
-        let nextCount = currentCount - 1;
-        productQuantity[i].value = nextCount;
-    
-        toggleButtonState(nextCount, i);
-    });
-};
-
-function toggleButtonState(currentCount, i) {
-    decrementButtonToggle(currentCount, i);
-    incrementButtonToggle(currentCount, i);
-};
-function decrementButtonToggle(currentCount, i) {
-    if (currentCount <= minQuantity) {
-        decrementBtn[i].disabled = true;
-    } else {
-        decrementBtn[i].disabled = false;
-    }
-};
-function incrementButtonToggle(currentCount, i) {
-    if (currentCount >= maxQuantity) {
-        incrementBtn[i].disabled = true;
-    } else {
-        incrementBtn[i].disabled = false;
-    }
-};
-
-
 // SELECTIZE
-
 
 $('#select-sort').selectize({
     create: true,
     hideSelected: true
 });
+
+// Input Count
+
+let decrementBtn    = document.querySelectorAll('.decrease-count-btn');
+let incrementBtn    = document.querySelectorAll('.increase-count-btn');
+let productQuantity = document.querySelectorAll('.input-count-field');
+let productCard     = document.querySelectorAll('.product-card');
+const maxCount      = 5;
+const minCount      = 1;
+
+// OOP
+
+for (let i = 0; i < productCard.length; i++) {
+    const counter = new Counter(incrementBtn[i], decrementBtn[i], productQuantity[i], minCount, maxCount );
+}
+
+function Counter(incrementButton, decrementButton, inputField, minCount, maxCount) {
+    
+    this.domRefs = {
+        incrementButton,
+        decrementButton,
+        inputField
+    }
+
+    this.toggleButtonState = function() {
+        let count = +this.domRefs.inputField.value;
+        this.domRefs.incrementButton.disabled = count >= maxCount;
+        this.domRefs.decrementButton.disabled = count <= minCount;
+    }
+
+    this.toggleButtonState();
+
+    this.increment = function() {
+        let currentCount = +this.domRefs.inputField.value;
+        let nextCount = currentCount + 1;
+        this.domRefs.inputField.value = nextCount;
+
+        this.toggleButtonState();
+    }
+
+    this.decrement = function() {
+        let currentCount = +this.domRefs.inputField.value;
+        let nextCount = currentCount - 1;
+        this.domRefs.inputField.value = nextCount;
+
+        this.toggleButtonState();
+    }
+
+    this.domRefs.incrementButton.addEventListener('click', this.increment.bind(this));
+    this.domRefs.decrementButton.addEventListener('click', this.decrement.bind(this));
+}
